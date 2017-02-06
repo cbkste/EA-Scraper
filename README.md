@@ -8,7 +8,7 @@ The tests for Nightwatch are written using [Mocha](http://mochajs.org/) exports 
 To run scraper
 
 ```sh
-$ bin/nightwatch -t test/ethihad/ethihad.tests.js
+$ bin/nightwatch --dep {DEPARTURE AIRPORT LOCATION} --des {DESTINATION AIRPORT LOCATION}  -t test/ethihad/ethihad.tests.js
 ```
 
 To run Seleninum Server using Chrome, Requires chromedriver.exe

@@ -4,7 +4,7 @@
   "custom_commands_path" : "./examples/custom-commands",
   "page_objects_path" : "./examples/pages",
   "custom_assertions_path" : "",
-  "globals_path" : "",
+  "globals_path" : "./bin/Globals.js",
   "live_output" : false,
   "parallel_process_delay" : 10,
   "disable_colors": false,
@@ -89,7 +89,7 @@
         "browserstack.key" : "..."
       }
     },
-    
+
     "testingbot" : {
       "selenium_host" : "hub.testingbot.com",
       "selenium_port" : 80,
@@ -112,5 +112,3 @@
     }
   }
 }
-
-

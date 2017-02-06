@@ -14,5 +14,5 @@ $ bin/nightwatch -t test/ethihad/ethihad.tests.js
 To run Seleninum Server using Chrome, Requires chromedriver.exe
 
 ```sh
-$ java -jar selenium/selenium-server-standalone-2.53.1.jar -Dwebdriver.chrome.driver=./chromedriver.exe
+$ java -jar bin/selenium/selenium-server-standalone-2.53.1.jar -Dwebdriver.chrome.driver=./bin/chromedriver.exe
 ```

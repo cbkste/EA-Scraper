@@ -3,15 +3,19 @@ var inboundAirportName = 'Brisbane, Australia (BNE) To Manchester, United Kingdo
 
 var searchCommands = {
 
-  VerifySearchPage: function() {
+  VerifySearchPage: function(client) {
     this.waitForElementVisible('@outboundFlightContainerDiv', 3000)
       .waitForElementVisible('@inboundsFlightContainerDiv', 3000)
       .assert.containsText('@outboundFlightAirportLocation', outboundAirportName)
       .assert.containsText('@inboundFlightAirportLocation', inboundAirportName)
+
+      return this;
   },
 
   GetData: function(client) {
+
     var elementValue = this.getText('@outboundMenu');
+
     this.waitForElementVisible('@outboundMenu', 2000)
 
     var cost;
@@ -86,8 +90,9 @@ var searchCommands = {
       console.log(cost);
     });
 
-
     client.pause(1000);
+
+    return this;
   }
 };
 

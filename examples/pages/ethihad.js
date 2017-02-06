@@ -1,6 +1,9 @@
 var title = 'Etihad Airways - Book flights and holidays';
 var departureDate = '01/07/2017';
 var returnDate = '22/07/2017';
+var depAirport = '';
+var destAirport = '';
+
 var searchCommands = {
 
   VerifyonHomePage: function(client) {
@@ -11,6 +14,9 @@ var searchCommands = {
   },
 
   FillOutFlightInfo: function(client) {
+    depAirport = departAirport;
+    destAirport = destinationAirport;
+
     this.waitForElementVisible('@outboundFlightDate', 3000)
         .clearValue('@outboundFlightDateText')
         .setValue('@outboundFlightDateText', departureDate)
@@ -21,12 +27,12 @@ var searchCommands = {
 
         .click('input[name=na1]')
         .clearValue('input[name=na1]')
-        .setValue('input[name=na1]', 'manchester')
+        .setValue('input[name=na1]', depAirport)
     client.keys(client.Keys.ENTER)
 
     this.click('@toLocationText')
         .clearValue('@toLocationText')
-        .setValue('@toLocationText', 'brisbane')
+        .setValue('@toLocationText', destinationAirport)
     client.keys(client.Keys.ENTER)
     return this;
 

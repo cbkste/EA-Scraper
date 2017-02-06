@@ -1,0 +1,17 @@
+.project
+*.DS_Store
+*.idea
+/nightwatch.json
+node_modules
+npm-debug.log
+lib-cov
+coverage.html
+selenium-debug.log
+phantomjsdriver.log
+tests_output
+*~
+\#*
+\.#*
+output
+chromedriver.exe
+selenium-server-standalone-2.53.1.jar

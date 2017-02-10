@@ -30,9 +30,10 @@ var searchCommands = {
     this.getText(div, function(result) {
       cost = result.value;
       var dateAndPrice = cost.split("\n");
+      var date = dateAndPrice[0];
       var PriceWithCurrency = dateAndPrice[1].split(" ");
       var price = PriceWithCurrency[1];
-      logger.info(price);
+      logger.info(date +' '+ price);
     });
   },
 

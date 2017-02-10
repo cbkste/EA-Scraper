@@ -26,7 +26,7 @@ var searchCommands = {
 
     return this;
   },
-  getTextData: function(client, div) {
+  getTextData: function(div) {
     this.getText(div, function(result) {
       cost = result.value;
       var dateAndPrice = cost.split("\n");
@@ -34,28 +34,28 @@ var searchCommands = {
       var price = PriceWithCurrency[1];
       logger.info(price);
     });
-     },
+  },
 
   GetData: function(client) {
 
     var elementValue = this.getText('@outboundMenu');
     this.waitForElementVisible('@outboundMenu', 2000)
 
-    this.getTextData(client, "@outboundMenuDaySelectorFirst");
-    this.getTextData(client, "@outboundMenuDaySelectorSecond");
-    this.getTextData(client, "@outboundMenuDaySelectorThird");
-    this.getTextData(client, "@outboundMenuDaySelectorFourth");
-    this.getTextData(client, "@outboundMenuDaySelectorFive");
-    this.getTextData(client, "@outboundMenuDaySelectorSix");
-    this.getTextData(client, "@outboundMenuDaySelectorSeventh");
+    this.getTextData("@outboundMenuDaySelectorFirst");
+    this.getTextData("@outboundMenuDaySelectorSecond");
+    this.getTextData("@outboundMenuDaySelectorThird");
+    this.getTextData("@outboundMenuDaySelectorFourth");
+    this.getTextData("@outboundMenuDaySelectorFive");
+    this.getTextData("@outboundMenuDaySelectorSix");
+    this.getTextData("@outboundMenuDaySelectorSeventh");
 
-    this.getTextData(client, "@inboundMenuDaySelectorFirst");
-    this.getTextData(client, "@inboundMenuDaySelectorSecond");
-    this.getTextData(client, "@inboundMenuDaySelectorThird");
-    this.getTextData(client, "@inboundMenuDaySelectorFourth");
-    this.getTextData(client, "@inboundMenuDaySelectorFive");
-    this.getTextData(client, "@inboundMenuDaySelectorSix");
-    this.getTextData(client, "@inboundMenuDaySelectorSeventh");
+    this.getTextData("@inboundMenuDaySelectorFirst");
+    this.getTextData("@inboundMenuDaySelectorSecond");
+    this.getTextData("@inboundMenuDaySelectorThird");
+    this.getTextData("@inboundMenuDaySelectorFourth");
+    this.getTextData("@inboundMenuDaySelectorFive");
+    this.getTextData("@inboundMenuDaySelectorSix");
+    this.getTextData("@inboundMenuDaySelectorSeventh");
 
     return this;
   }

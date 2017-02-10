@@ -1,26 +1,24 @@
 var args = require('minimist')(process.argv);
+var my_env = {};
+var departureAirport;
+var destinationAirport;
 
-function getDeparture() {
-    return args["dep"] || "default";
+
+for (e in process.env) my_env[e] = process.env[e];
+
+if(my_env["departureAirport"]){
+  departureAirport=my_env["departureAirport"]
+  console.log("Env Variable set using : " + departureAirport);
 }
 
-function getDestination() {
-    return args["des"] || "default";
+if(my_env["destinationAirport"]){
+  destinationAirport=my_env["destinationAirport"]
+  console.log("Env Variable set using : " + destinationAirport);
 }
 
 module.exports = {
     environment: undefined,
     departAirport: undefined,
-    destinationAirport: undefined,
-    before: function (done) {
-       // parseArgumentsAndGetEnv is function you need to implement on your own to find your env param
-        environment = getDeparture(process.argv);
-        departAirport = environment;
-        environment = getDestination(process.argv);
-        destinationAirport = environment;
-        console.log("ENVS:");
-        console.log("Depart Airport: " + departAirport);
-        console.log("Destination Airport: " + destinationAirport);
-        done();
-    }
-};
+    "departureAirport": departureAirport,
+    "destinationAirport": destinationAirport
+  };

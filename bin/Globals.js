@@ -1,4 +1,3 @@
-var args = require('minimist')(process.argv);
 var my_env = {};
 var departureAirport;
 var destinationAirport;

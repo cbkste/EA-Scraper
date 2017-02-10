@@ -1,3 +1,12 @@
+var winston = require('winston');
+
+// Logger for data output
+var logger = new (winston.Logger)({
+   transports: [
+     new (winston.transports.File)({ filename: 'Data.log' })
+   ]
+ });
+
 var outboundAirportName = 'Manchester, United Kingdom (MAN) To Brisbane, Australia (BNE)';
 var inboundAirportName = 'Brisbane, Australia (BNE) To Manchester, United Kingdom (MAN)';
 
@@ -88,6 +97,7 @@ var searchCommands = {
     this.getText("@inboundMenuDaySelectorSeventh", function(result) {
       cost = result.value;
       console.log(cost);
+      logger.log('info',cost);
     });
 
     client.pause(1000);
